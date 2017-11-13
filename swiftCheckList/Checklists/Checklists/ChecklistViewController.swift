@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ChecklistViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -20,6 +21,13 @@ class ChecklistViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
+        return cell
+    }
 }
 
